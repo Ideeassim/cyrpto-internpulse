@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.trending-box{
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 15px;
+    
+}
+.coin-box{
+    display: flex;
+    gap: 45px;
+    margin: 20px;
+}
