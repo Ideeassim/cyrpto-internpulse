@@ -14,3 +14,68 @@
     gap: 45px;
     margin: 20px;
 }
+.coin-heading{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    border-top: brown solid 0.005px;
+    justify-content: space-around;
+    
+}
+.coin-trl{
+    display: flex;
+}
+.sgl-bxs{
+    width: 200px;
+    height: 50px ;
+    /* border: solid black; */
+    display: flex;
+    align-items: center;
+}
+.coin-mh{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    border: brown solid 0.005px;
+    /* justify-content: space-evenly; */
+    gap: 60px;
+   padding-left: 65px;
+   font-weight: 500;
+
+}
+.coin-mh>p{
+    /* border: solid black; */
+    width: 200px;
+}
+.coin-mh>.p3{
+    text-align: center;
+    /* border: solid blue; */
+    width: 260px;
+}
+.coin-mh>.p4{
+    text-align: center;
+    padding-left: 5px;
+    border: solid blue;
+    width: 200px;
+}
+body{
+    background-color: #FDF7F4;
+}
+.bbr{
+    display: flex;
+    gap: 10px;
+}
+
+/* mobile css */
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    /* CSS */
+    .coin-mh{
+        gap: 10px;
+        padding-left: 5px;
+        font-size: 14px;
+    }
+    .coin-heading{
+        font-size: 12px;
+    }
+  }

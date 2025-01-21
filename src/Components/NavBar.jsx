@@ -5,7 +5,9 @@ import { Toolbar, Box, AppBar, Typography } from '@mui/material';
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-// import { DataGrid } from '@mui/x-data-grid';
+import { useState } from 'react';
+import useAxios from '../Hooks/useAxios'
+
 
 
 
@@ -97,13 +99,47 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-const SearchAppBar = () => {
+const SearchAppBar = ({setResults}) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchData, setData]= useState([])
+
+  const fetchData=(value) =>{
+    fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd').then((response)=>
+    response.json()).then((json) =>{
+      const results = json.filter((item) =>{
+       return item.id.toLowerCase().includes(value)
+       
+      });
+       console.log(results);
+       setResults(results)
+    })
+  }
+    // function trf() {
+    //   return searchData(results)
+    // }
+
+    function handleChange(params) {
+  setSearchQuery(params)
+  fetchData(params)
+ 
+  
+}
+ 
+
+
+
+// function searchCoin(e) {
+//   setSearchQuery(e.target.value); 
+//   console.log(data);
+// }
+
+
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1, marginBottom: '20px'}}>
             <AppBar position="static" sx={{bgcolor: 'brownColor1.main'}} >
-                <Toolbar sx={{justifyContent: 'space-between'}}>
+                <Toolbar sx={{justifyContent: 'space-between', flexDirection: {xs:'column', sm:'column', md:'row'}}}>
                   <Link to={"/"}>
                     <Box sx={{display:'flex', gap: '7px'}}>
                     <img src={logo} alt="" style={{'height': '30px', 'width':'30px', 'borderRadius':'70%'}} />
@@ -117,12 +153,18 @@ const SearchAppBar = () => {
                     <StyledInputBase
                     placeholder="Search…"
                     inputProps={{ 'aria-label': 'search' }}
+                    onChange={(e) =>handleChange(e.target.value)}
+                    value={searchQuery}
+                    type='text'
                     />
                     </Search>
                 </Toolbar>
             </AppBar>
         </Box>
         </ThemeProvider>
+       
+       
+         
     </div>
   )
 }

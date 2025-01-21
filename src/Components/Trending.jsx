@@ -10,6 +10,7 @@ const Trending = () => {
   return (
     <Box sx={{margin: '20px'}}>
         <Typography variant='h6' >Top Trending Cryptocurrencies Today</Typography>
+        
     {response && response.coins.map(coin => <CoinTrending  key={coin.item.coin_id} coin={coin} />)}
     </Box>
   )
