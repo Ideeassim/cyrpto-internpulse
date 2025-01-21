@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 
 const Markets = ({results}) => {
     const {response} = useAxios('coins/markets?vs_currency=usd');
-    // console.log(response);
+   
     
   return (
     <div>
@@ -16,7 +16,7 @@ const Markets = ({results}) => {
                 <p className='p3'>Price change in 24hr</p>
                 <p className='p4'>Market Cap</p>
             </div>
-            {/* {!results? results.map(coin => <Coin key={coin.id} coin={coin}/>) :response.map(coin => <Coin key={coin.id} coin={coin}/>) } */}
+           
         {response && response.map(coin => <Coin key={coin.id} coin={coin}/>)}
     </div>
   )

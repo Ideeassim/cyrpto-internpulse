@@ -114,9 +114,7 @@ const SearchAppBar = ({setResults}) => {
        setResults(results)
     })
   }
-    // function trf() {
-    //   return searchData(results)
-    // }
+
 
     function handleChange(params) {
   setSearchQuery(params)
@@ -128,10 +126,6 @@ const SearchAppBar = ({setResults}) => {
 
 
 
-// function searchCoin(e) {
-//   setSearchQuery(e.target.value); 
-//   console.log(data);
-// }
 
 
   return (

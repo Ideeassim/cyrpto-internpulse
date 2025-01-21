@@ -20,7 +20,7 @@ const Coin = ({coin}) => {
                 {coin.price_change_percentage_24h}</p>
             </div>
             <div className="sgl-bxs">
-                {/* <p>Market Cap</p> */}
+               
                 <p>{coin.market_cap}</p>
             </div>
             <hr />

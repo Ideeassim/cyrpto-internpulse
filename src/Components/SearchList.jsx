@@ -3,9 +3,7 @@ import Coin from "./Coin";
 
 const SearchList = ({results}) => {
     
-    function rem({results}) {
-        return results = [];
-    }
+  
   return (
   <div>
     {results? results.map((coin, id) => {
